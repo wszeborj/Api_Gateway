@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     AUTH0_ALGORITHMS: str
 
     # Microservices URLs
-    COURSE_SERVICE_URL: str = "http://localhost:8001"
+    COURSE_SERVICE_URL: str = "http://course_service:8000/api/v1/"
 
     # Timeouts
     SERVICE_TIMEOUT: int = 30

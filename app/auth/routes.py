@@ -3,8 +3,8 @@ from urllib.parse import quote_plus, urlencode
 from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse, JSONResponse
 
-from app.auth.config import oauth
-from app.core.config import settings
+from ..auth.config import oauth
+from ...core.config import settings
 
 
 auth_router = APIRouter()

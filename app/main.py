@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version="1.0.0",
-    description="API Gateway dla Mikroserwisu Kursów",
+    description="API Gateway for Mikroserwisu Kursów",
 )
 
 # Middleware CORS
