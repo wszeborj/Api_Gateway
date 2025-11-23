@@ -55,4 +55,3 @@ jobs:
       - name: Check security dependencies
         run: poetry run safety check
         continue-on-error: true
-

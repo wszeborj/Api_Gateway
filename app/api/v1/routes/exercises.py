@@ -1,6 +1,7 @@
 from fastapi import APIRouter
-from ....core.http_client import HttpClient
+
 from ....core.config import settings
+from ....core.http_client import HttpClient
 from ....schemas.exercise import ExerciseCreate, ExerciseUpdate
 
 router = APIRouter(prefix="/exercises", tags=["exercises"])
@@ -29,7 +30,9 @@ async def get_exercises_by_lesson(lesson_id: int):
 
 @router.put("/{exercise_id}")
 async def update_exercise(exercise_id: int, exercise: ExerciseUpdate):
-    return await client.request("PUT", f"/exercises/{exercise_id}", json=exercise.model_dump())
+    return await client.request(
+        "PUT", f"/exercises/{exercise_id}", json=exercise.model_dump()
+    )
 
 
 @router.delete("/{exercise_id}")

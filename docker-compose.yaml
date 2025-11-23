@@ -12,8 +12,13 @@ services:
       - "8000:8000"
     networks:
       - gateway_to_course_service
+      - gateway_to_user_service
 
 networks:
   gateway_to_course_service:
     name: gateway_to_course_service_network
+    driver: bridge
+
+  gateway_to_user_service:
+    name: gateway_to_user_service_network
     driver: bridge

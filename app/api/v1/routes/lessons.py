@@ -1,6 +1,7 @@
 from fastapi import APIRouter
-from ....core.http_client import HttpClient
+
 from ....core.config import settings
+from ....core.http_client import HttpClient
 from ....schemas.lesson import LessonCreate, LessonUpdate
 
 router = APIRouter(prefix="/lessons", tags=["lessons"])
@@ -29,7 +30,9 @@ async def get_lessons_by_course(course_id: int):
 
 @router.put("/{lesson_id}")
 async def update_lesson(lesson_id: int, lesson: LessonUpdate):
-    return await client.request("PUT", f"/lessons/{lesson_id}", json=lesson.model_dump())
+    return await client.request(
+        "PUT", f"/lessons/{lesson_id}", json=lesson.model_dump()
+    )
 
 
 @router.delete("/{lesson_id}")

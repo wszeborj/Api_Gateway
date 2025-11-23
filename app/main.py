@@ -1,8 +1,8 @@
-from typing import Dict
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from .api.v1.api_router import api_v1_router
 from .core.config import settings
-from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -20,6 +20,7 @@ app.add_middleware(
 )
 
 app.include_router(api_v1_router)
+
 
 @app.get("/", tags=["Root"])
 def health_check() -> dict[str, str]:

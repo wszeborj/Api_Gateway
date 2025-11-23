@@ -1,6 +1,7 @@
-from fastapi import APIRouter, HTTPException
-from ....core.http_client import HttpClient
+from fastapi import APIRouter
+
 from ....core.config import settings
+from ....core.http_client import HttpClient
 from ....schemas.course import CourseCreate, CourseUpdate
 
 router = APIRouter(prefix="/courses", tags=["courses"])
@@ -24,7 +25,9 @@ async def get_course(course_id: int):
 
 @router.put("/{course_id}")
 async def update_course(course_id: int, course: CourseUpdate):
-    return await client.request("PUT", f"/courses/{course_id}", json=course.model_dump())
+    return await client.request(
+        "PUT", f"/courses/{course_id}", json=course.model_dump()
+    )
 
 
 @router.delete("/{course_id}")
