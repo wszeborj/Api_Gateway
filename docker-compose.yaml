@@ -13,6 +13,7 @@ services:
     networks:
       - gateway_to_course_service
       - gateway_to_user_service
+      - gateway_to_progress_service
 
 networks:
   gateway_to_course_service:
@@ -21,4 +22,8 @@ networks:
 
   gateway_to_user_service:
     name: gateway_to_user_service_network
+    driver: bridge
+
+  gateway_to_progress_service:
+    name: gateway_to_progress_service_network
     driver: bridge

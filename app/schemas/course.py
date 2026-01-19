@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 
 
 class CourseBase(BaseModel):
-
     title: str = Field(
         min_length=3,
         max_length=200,
@@ -25,7 +24,6 @@ class CourseCreate(CourseBase):
 
 class CourseUpdate(BaseModel):
     title: Optional[str] = Field(None, min_length=3, max_length=200)
-
     description: Optional[str] = None
 
 
