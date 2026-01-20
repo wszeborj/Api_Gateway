@@ -25,8 +25,8 @@ class Settings(BaseSettings):
     # Microservices URLs
     COURSE_SERVICE_URL: str = "http://course_service:8000/api/v1/"
     USER_SERVICE_URL: str = "http://user_service:8000/api/v1/"
-    PROGRESS_SERVICE_URL: str = "http://progress_service:8300/graphql"
-    APP_STATS_SERVICE_URL: str = "http://app_stats_service:8300/graphql"
+    PROGRESS_SERVICE_URL: str = "http://progress_service:8000/graphql/"
+    APP_STATS_SERVICE_URL: str = "http://app_stats_service:8000/graphql"
 
     # Timeouts
     SERVICE_TIMEOUT: int = 30
